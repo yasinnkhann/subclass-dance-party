@@ -2,6 +2,8 @@ var BreakDancer = function(top, left, timeBetweenSteps) {
   // connects to super class
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('breakDancer');
+  this.$node.append('<img class="breakDancer" src="assets/disco-dancer.gif" />');
+
 };
 
 // Acquire all methods from Dancer
@@ -9,7 +11,7 @@ BreakDancer.prototype = Object.create(Dancer.prototype);
 
 BreakDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  this.$node.css('border', '10px solid '+ this.randomColorGen());
+  this.$node.css('border', '15px solid '+ this.randomColorGen());
 };
 
 BreakDancer.prototype.randomColorGen = function() {

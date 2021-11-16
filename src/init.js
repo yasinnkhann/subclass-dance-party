@@ -30,5 +30,36 @@ $(document).ready(function() {
     $('body').append(dancer.$node);
     dancers.push(dancer.$node);
   });
-});
 
+
+
+  $('.lineUp').on('click', function(event) {
+    //calculate interval by
+    var widthInterval = .9 / dancers.length; 0.05
+
+    //iterate through the dancers array
+    for (var i = 0; i < dancers.length; i++) {
+      //call the .lineUp function on each dancer
+      dancers[i].animate({'left': $('body').width() * widthInterval * (i + 1), 'top' : '75%'});
+    }
+
+
+
+
+    // var dancerMakerFunctionName = $(this).data('dancer-maker-function-name'); //makeBlinkyDancer
+
+
+    // // get the maker function for the kind of dancer we're supposed to make
+    // var dancerMakerFunction = window[dancerMakerFunctionName]; //makeBlinkDancer function
+
+    // // make a dancer with a random position
+
+    // var dancer = new dancerMakerFunction(
+    //   $("body").height() * Math.random(),
+    //   $("body").width() * Math.random(),
+    //   Math.random() * 1000
+    // );
+    // $('body').append(dancer.$node);
+    // dancers.push(dancer.$node);
+  });
+});

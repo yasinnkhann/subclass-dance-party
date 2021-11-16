@@ -6,7 +6,7 @@ body{
   background-color:#444;
   font-size: 18px;
   background-color:black;
-  background-image: url('/assets/dancePartyBackground.jpeg');
+  background-image: url('/assets/dancePartyNew.jpeg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position:center;
@@ -20,23 +20,52 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
-.topbar{
+.topbar {
   height:32px;
   background-color: #555;
 }
-.title{
+.title {
   background-color: #777;
 }
-.dancer{
-  border:10px solid red;
+.dancer {
+  height: 100px;
+  width: 100px;
   border-radius:10px;
   position:absolute;
 }
 
 .breakDancer {
-  border:10px solid rgb(255, 255, 0);
+  height: 100px;
 }
 
 .tapDancer {
-  border:10px solid rgb(255, 0, 255);
+  border: 15px solid rgb(255, 0, 255);
+  height: 100px;
+  width: 80px;
+  border-radius:10px;
+}
+.cat {
+  border: none;
+  border-radius: 0;
+}
+
+
+.blinky {
+  height: 120px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid gold;
+}
+
+.napolean {
+  border:none;
+}
+
+.lineUp {
+  padding:5px 12px;
+  float: right;
+}
+
+.dancer:hover {
+  transform: scale(2.0);
 }

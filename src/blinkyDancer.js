@@ -22,6 +22,7 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
   // connects to super class
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('blinky');
+  this.$node.append('<img class="blinky napolean" src="assets/naploean.gif" />');
 };
 
 // Aquire all methods from Dancer

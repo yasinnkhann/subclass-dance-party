@@ -1,20 +1,20 @@
-var BreakDancer = function(top, left, timeBetweenSteps) {
+var DiscoDancer = function(top, left, timeBetweenSteps) {
   // connects to super class
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass('breakDancer');
-  this.$node.append('<img class="breakDancer" src="assets/disco-dancer.gif" />');
+  this.$node.addClass('discoDancer');
+  this.$node.append('<img class="discoDancer" src="assets/disco-dancer.gif" />');
 
 };
 
 // Acquire all methods from Dancer
-BreakDancer.prototype = Object.create(Dancer.prototype);
+DiscoDancer.prototype = Object.create(Dancer.prototype);
 
-BreakDancer.prototype.step = function() {
+DiscoDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
   this.$node.css('border', '15px solid '+ this.randomColorGen());
 };
 
-BreakDancer.prototype.randomColorGen = function() {
+DiscoDancer.prototype.randomColorGen = function() {
   var randomBetween = function(min, max) {
     return min + Math.floor(Math.random() * (max - min + 1));
   };
@@ -27,5 +27,5 @@ BreakDancer.prototype.randomColorGen = function() {
   return rgb
 };
 
-BreakDancer.prototype.constructor = BreakDancer;
+DiscoDancer.prototype.constructor = DiscoDancer;
 

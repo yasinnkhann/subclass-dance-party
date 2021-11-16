@@ -34,7 +34,7 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
-.breakDancer {
+.discoDancer {
   height: 100px;
 }
 
@@ -68,4 +68,9 @@ body, a:link, a:visited, a:active{
 
 .dancer:hover {
   transform: scale(2.0);
+}
+
+.playMusic {
+  padding:5px 12px;
+  float: right;
 }

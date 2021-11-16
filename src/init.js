@@ -62,4 +62,17 @@ $(document).ready(function() {
     // $('body').append(dancer.$node);
     // dancers.push(dancer.$node);
   });
+
+  var isMusicPlaying = false;
+
+  $('.playMusic').on('click', function(event) {
+    var audio = new Audio("/assets/Benny Benassi - Satisfaction (Official Video HD!).mp3");
+    if (!isMusicPlaying) {
+        audio.play();
+        isMusicPlaying = true
+      } else {
+        audio.pause();
+        isMusicPlaying = false;
+      }
+  });
 });

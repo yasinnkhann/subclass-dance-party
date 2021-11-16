@@ -11,16 +11,24 @@ TapDancer.prototype = Object.create(Dancer.prototype);
 TapDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
   //this.setPosition();
+  this.hop();
   //$('.cat').animate({transform: 90});
   // this.$node.rotate(-15);
 };
 
 TapDancer.prototype.setPosition = function() {
-  var styleSettings = {
-    top: $('body').height() * Math.random(),
-    left: $('body').width() * Math.random()
-  };
-  this.$node.css(styleSettings);
+  var initialTop = $('body').height() * Math.random();
+  var initialLeft = $('body').width() * Math.random();
+  this.$node.css({top: initialTop, left: initialLeft});
+  // this.$node.animate({top: initialTop - 10, left: initialLeft});
+  // this.$node.animate({top: initialTop + 10, left: initialLeft});
+
 };
+
+TapDancer.prototype.hop = function() {
+  this.$node.animate({top: this.$node.position().top + 10});
+  //this.$node.animate({top: +10});
+}
+
 
 TapDancer.prototype.constructor = TapDancer;

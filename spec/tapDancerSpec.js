@@ -12,13 +12,12 @@ describe('tapDancer', function() {
     expect(tapDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should alternate positions', function() {
+  it('should rotate position', function() {
     sinon.spy(tapDancer.$node, 'css');
-    var initialTop = tapDancer.$node.css('top');
-    var initialLeft = tapDancer.$node.css('left');
+    var initial = tapDancer.$node.css('transform');
     tapDancer.step();
-    expect(tapDancer.$node.css('top')).to.not.equal(initialTop);
-    expect(tapDancer.$node.css('left')).to.not.equal(initialLeft);
+    var final = tapDancer.$node.css('transform');
+    expect(initial).to.not.equal(final);
   });
 
   describe('dance', function() {

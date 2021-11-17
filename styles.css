@@ -1,7 +1,7 @@
-body, html{
+body, html {
   height:100%;
 }
-body{
+body {
   margin: 0px;
   background-color:#444;
   font-size: 18px;
@@ -13,25 +13,83 @@ body{
   height: 100vh;
   width: 100vw;
 }
-body, a:link, a:visited, a:active{
+body, a:link, a:visited, a:active {
   color: lightblue;
 }
+
+/* ------------
+Title and Buttons
+--------------*/
+
 .title, .addDancerButton {
   padding:5px 12px;
   float:right;
 }
+
 .topbar {
-  height:32px;
-  background-color: #555;
+  height:90px;
+  background-color: black;
+  padding: 0;
 }
 .title {
-  background-color: #777;
+  background-color: black;
+  font-family: 'Monoton', cursive;
+  font-size: 50px;
+  margin: 0;
+
 }
+.title, .addDancerButton {
+  padding:1px 12px;
+  float:right;
+  color: #FF2FB9;
+}
+.addDancerButton, .lineUp, .pairUp, .playMusic {
+  padding:7px 12px;
+  border:2px solid #FF2FB9;
+  border-radius: 3px;
+  margin: 20px 5px;
+  text-decoration: none;
+  color: #FF2FB9;
+}
+
+.addDancerButton:hover, .lineUp:hover, .pairUp:hover, .playMusic:hover {
+  border:2px solid #FF2FB9;
+  color: #FF2FB9;
+  background-color: darkgrey;
+}
+
+.lineUp {
+  padding:5px 12px;
+  float: right;
+}
+
+.pairUp {
+  padding:5px 12px;
+  float: right;
+}
+
+.playMusic {
+  padding:5px 12px;
+  float: left;
+  margin-left: 15px;
+}
+
+a:link{
+  color: #FF2FB9;
+}
+
+/*-------------
+Dancers
+------------*/
 .dancer {
   height: 100px;
   width: 100px;
   border-radius:10px;
   position:absolute;
+}
+
+.dancer:hover {
+  transform: scale(2.0);
 }
 
 .discoDancer {
@@ -49,6 +107,9 @@ body, a:link, a:visited, a:active{
   border-radius: 0;
 }
 
+.tapDancer:hover {
+  transform: scale(2.0);
+}
 
 .blinky {
   height: 120px;
@@ -61,16 +122,7 @@ body, a:link, a:visited, a:active{
   border:none;
 }
 
-.lineUp {
-  padding:5px 12px;
-  float: right;
-}
 
-.dancer:hover {
-  transform: scale(2.0);
-}
 
-.playMusic {
-  padding:5px 12px;
-  float: right;
-}
+
+

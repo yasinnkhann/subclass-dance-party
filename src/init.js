@@ -42,10 +42,6 @@ $(document).ready(function() {
       //call the .lineUp function on each dancer
       dancers[i].animate({'left': $('body').width() * widthInterval * (i + 1), 'top' : '75%'});
     }
-
-
-
-
     // var dancerMakerFunctionName = $(this).data('dancer-maker-function-name'); //makeBlinkyDancer
 
 
@@ -63,16 +59,50 @@ $(document).ready(function() {
     // dancers.push(dancer.$node);
   });
 
+
   var isMusicPlaying = false;
 
+  var audio = new Audio("/assets/Benny Benassi - Satisfaction (Official Video HD!).mp3");
+
   $('.playMusic').on('click', function(event) {
-    var audio = new Audio("/assets/Benny Benassi - Satisfaction (Official Video HD!).mp3");
     if (!isMusicPlaying) {
         audio.play();
         isMusicPlaying = true
       } else {
         audio.pause();
+        audio.currentTime = 0;
         isMusicPlaying = false;
       }
+  });
+
+  $('.pairUp').on('click', function(event) {
+    // var copy = dancers.slice();
+
+    // //function for the distance
+    // var distance = function(a, b) {
+    //   var y = a.position().top - b.position().top;
+    //   var x = a.position().left - b.position().left;
+
+    //   var c = (y**2 + x**2) ** 0.5;
+    //   return c;
+    // }
+
+    // var currentDancer = dancers[0];
+    // var shortestDistance = Infinity;
+
+    // for(var i = 1; i < dancers.length; i++) {
+    // }
+
+    for (var i = 0; i < dancers.length - 1; i += 2) {
+      var y = dancers[i].position().top;
+      var x = dancers[i].position().left;
+
+      dancers[i + 1].animate({top: y, left: x + 70 });
+    }
+
+    if (dancers.length % 2 === 1) {
+      var oddMan = dancers[dancers.length - 1];
+      oddMan.animate({top: '80%', left: '5%'});
+    }
   });
 });
